@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  teste-postgres-compose:
+    image: postgres:9.6
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - APP_DB_USER=postgres
+      - APP_DB_PASS=postgres
+      - APP_DB_NAME=postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - network
+
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "postgres"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - "16543:80"
+    depends_on:
+      - teste-postgres-compose
+    networks:
+      - network
+
+  cotacao:
+    image: betofroesjr/cotacao:0.0.1-SNAPSHOT
+    container_name: cotacao
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
