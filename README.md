@@ -27,4 +27,4 @@ Nós usamos [gitgub](https://github.com/betofroesjr/) para controle de versão. 
 ## ✒️ Autores
 
 * **José Humberto Fróes Júnior** - *Trabalho Inicial* - [betofroesjr](https://github.com/betofroesjr)
-* **Lucas Feliciano** - *Documentação* - [betofroesjr](https://github.com/betofroesjr)
+* **José Humberto Fróes Júnior** - *Documentação* - [betofroesjr](https://github.com/betofroesjr)
